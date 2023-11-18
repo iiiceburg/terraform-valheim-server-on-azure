@@ -11,14 +11,14 @@ resource "random_string" "container_name" {
 }
 
 resource "random_string" "storage_name" {
-  length  = 12
+  length  = 6
   lower   = true
   upper   = false
   special = false
 }
 
 resource "azurerm_storage_account" "storage" {
-  name                     = "$valheimstorage${random_string.storage_name.result}"
+  name                     = "valheim${random_string.storage_name.result}"
   resource_group_name      = azurerm_resource_group.rg.name
   location                 = azurerm_resource_group.rg.location
   account_tier             = "Standard"
