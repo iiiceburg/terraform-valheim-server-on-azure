@@ -43,7 +43,7 @@ variable "port" {
 variable "cpu_cores" {
   type        = number
   description = "The number of CPU cores to allocate to the container."
-  default     = 8
+  default     = 4
 }
 
 variable "memory_in_gb" {
@@ -91,3 +91,34 @@ variable "server_public" {
   description = "Whether the server is public or not."
   default     = false
 }
+
+variable "supervisor_http" {
+  type = bool
+  description = "Whether to enable supervisor http or not."
+  default = true
+}
+
+variable "supervisor_http_port" {
+  type = number
+  description = "The port of the supervisor http."
+  default = 9001
+}
+
+variable "supervisor_http_username" {
+  type = string
+  description = "The username of the supervisor http."
+  default = "admin"
+}
+
+variable "supervisor_http_password" {
+  type = string
+  description = "The password of the supervisor http."
+  default = "admin"
+}
+
+variable "storage_share" {
+  type = string
+  description = "The name of the storage share."
+  default = "valheim-server-data"
+}
+
